@@ -28,6 +28,6 @@ namespace APICatalogo.Models
 
         public int CategoriaID { get; set; }
         //Propriedade de navegação
-        public Categoria Categoria { get; set; }
+        public Categoria? Categoria { get; set; }
     }
 }
