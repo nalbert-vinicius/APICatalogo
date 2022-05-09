@@ -32,7 +32,7 @@ namespace APICatalogo.Controllers
         [HttpGet("{id}", Name = "ObterProduto")]
         public ActionResult<Produto> GetById(int id)
         {
-            var produto = _context.Produto.FirstOrDefault(p => p.ProdutoId == id);
+            var produto = _context.Produto.FirstOrDefault(p => p.ProdutoId == id); 
 
             if (produto == null)
             {
