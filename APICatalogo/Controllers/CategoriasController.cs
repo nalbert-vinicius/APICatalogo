@@ -23,7 +23,7 @@ namespace APICatalogo.Controllers
             return _context.Categoria.AsNoTracking().ToList();
         }
 
-        [HttpGet("{id}", Name = "ObterCategoria")]
+        [HttpGet("{id}", Name = "GetCategoria")]
         public ActionResult<IEnumerable<Categoria>> GetById(int id)
         {
             var categoria = _context.Categoria.AsNoTracking().FirstOrDefault(c => c.CategoriaId == id);
@@ -55,7 +55,7 @@ namespace APICatalogo.Controllers
             _context.Categoria.Add(categoria);
             _context.SaveChanges();
 
-            return new CreatedAtRouteResult("ObterCategoria", new {id = categoria.CategoriaId }, categoria);
+            return new CreatedAtRouteResult("GetCategoria", new {id = categoria.CategoriaId }, categoria);
         }
 
         [HttpPut("{id}")]
